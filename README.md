@@ -1,0 +1,3 @@
+# MIMETypes
+
+** TODO: Add description **
