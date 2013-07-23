@@ -5,6 +5,8 @@ defmodule MIMETypesTest do
 
   import MIMETypes
 
+  doctest MIMETypes
+
   test :extensions do
     assert "json" in extensions("application/json")
     assert extensions("application/vnd.api+json") == []

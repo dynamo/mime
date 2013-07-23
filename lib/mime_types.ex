@@ -1,4 +1,8 @@
 defmodule MIMETypes do
+  @moduledoc """
+  Maps MIME types to file extensions and vice versa.
+  """
+
   @default_type "application/octet-stream"
 
   data = File.read! Path.expand("../priv/mime.types", __DIR__)
@@ -12,6 +16,13 @@ defmodule MIMETypes do
     end
   end) |> Enum.reverse
 
+  @doc """
+  Returns the extensions associated with a MIME type.
+
+  iex> MIMETypes.extensions("text/plain")
+  ["txt", "text", "conf", "def", "list", "log", "in"]
+  """
+
   @spec extensions(String.t) :: [String.t]
 
   lc { type, exts } inlist mapping do
@@ -19,6 +30,13 @@ defmodule MIMETypes do
   end
 
   def extensions(_mimetype), do: []
+
+  @doc """
+  Returns the MIME type associated with a file extension.
+
+  iex> MIMETypes.type("txt")
+  "text/plain"
+  """
 
   @spec type(String.t) :: String.t
 

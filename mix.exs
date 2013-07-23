@@ -4,7 +4,7 @@ defmodule MIMETypes.Mixfile do
   @version String.strip(File.read!("VERSION"))
 
   def project do
-    [ app: :mime_types,
+    [ app: :mimetypes,
       version: @version,
       deps: deps ]
   end
