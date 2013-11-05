@@ -7,6 +7,11 @@ defmodule MIMETypesTest do
 
   doctest MIMETypes
 
+  test :valid? do
+    assert valid?("application/json")
+    refute valid?("application/prs.joseshrine")
+  end
+
   test :extensions do
     assert "json" in extensions("application/json")
     assert extensions("application/vnd.api+json") == []

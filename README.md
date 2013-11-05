@@ -14,8 +14,8 @@ iex> MIMETypes.extensions("application/json")
 
 ## mime.types
 
-This module uses the public domain [`mime.types`][1] file from the Apache
-Server Project. The file is parsed during compilation time and embedded
-directly into the module.
+This module uses the public domain [`mime.types`][1] file from the
+Mailcap project. The file is parsed during compilation time and
+embedded directly into the module.
 
-[1]: http://svn.apache.org/repos/asf/httpd/httpd/trunk/docs/conf/mime.types
+[1]: https://git.fedorahosted.org/cgit/mailcap.git/plain/mime.types

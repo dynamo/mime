@@ -5,22 +5,36 @@ defmodule MIMETypes do
 
   @default_type "application/octet-stream"
 
-  data = File.read! Path.expand("../priv/mime.types", __DIR__)
-
-  mapping = Enum.reduce(String.split(data, %r/\n/), [], fn (line, acc) ->
-    if line == "" or line =~ %r/^#/ do
+  stream = File.stream! Path.expand("../priv/mime.types", __DIR__)
+  mapping = Enum.reduce(stream, [], fn (line, acc) ->
+    if line =~ %r/^[#\n]/ do
       acc
     else
-      [ type | exts ] = String.split(line)
+      [ type | exts ] = String.split(String.strip(line))
       [ { type, exts } | acc ]
     end
   end) |> Enum.reverse
 
   @doc """
+  Returns whether a MIME type is registered.
+
+  iex> MIMETypes.valid?("text/plain")
+  true
+  """
+
+  @spec valid?(String.t) :: boolean
+
+  lc { type, _exts } inlist mapping do
+    def valid?(unquote(type)), do: true
+  end
+
+  def valid?(_type), do: false
+
+  @doc """
   Returns the extensions associated with a MIME type.
 
-  iex> MIMETypes.extensions("text/plain")
-  ["txt", "text", "conf", "def", "list", "log", "in"]
+  iex> hd MIMETypes.extensions("text/plain")
+  "txt"
   """
 
   @spec extensions(String.t) :: [String.t]
