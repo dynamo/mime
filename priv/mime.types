@@ -164,6 +164,7 @@ application/ocsp-request			orq
 application/ocsp-response			ors
 application/octet-stream		bin lha lzh exe class so dll img iso
 application/oda					oda
+application/ODX					odx
 application/oebps-package+xml			opf
 application/ogg					ogx
 application/oxps				oxps
@@ -193,6 +194,7 @@ application/postscript				ps eps ai
 application/provenance+xml			provx
 application/prs.alvestrand.titrax-sheet
 application/prs.cww				cw cww
+application/prs.hpub+zip			hpub
 application/prs.nprend				rnd rct
 application/prs.plucker
 application/prs.rdf-xml-crypt			rdf-crypt
@@ -277,6 +279,7 @@ application/urc-grpsheet+xml			gsheet
 application/urc-ressheet+xml			rsheet
 application/urc-targetdesc+xml			td
 application/urc-uisocketdesc+xml		uis
+application/vcard+json
 application/vcard+xml
 application/vemmi
 application/vnd.3gpp.bsf+xml
@@ -323,6 +326,7 @@ application/vnd.audiograph			aep
 application/vnd.autopackage			package
 application/vnd.avistar+xml
 application/vnd.balsamiq.bmml+xml		bmml
+application/vnd.bekitzur-stech+json
 application/vnd.blueice.multipass		mpm
 application/vnd.bluetooth.ep.oob		ep
 application/vnd.bluetooth.le.oob		le
@@ -1316,7 +1320,8 @@ model/vnd.parasolid.transmit.text		x_t xmt_txt
 model/vnd.vtu					vtu
 model/vrml					wrl vrml
 # x3d: application/vnd.hzn-3d-crossword
-model/x3d+xml
+model/x3d+xml					x3db
+model/x3d-vrml					x3dv x3dvz
 multipart/alternative
 multipart/appledouble
 multipart/byteranges

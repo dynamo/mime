@@ -1,15 +1,13 @@
-Code.require_file "test_helper.exs", __DIR__
-
-defmodule MIMETypesTest do
+defmodule MIME.TypesTest do
   use ExUnit.Case, async: true
 
-  import MIMETypes
+  import MIME.Types
 
-  doctest MIMETypes
+  doctest MIME.Types
 
   test :valid? do
     assert valid?("application/json")
-    refute valid?("application/prs.joseshrine")
+    refute valid?("application/prs.vacation-photos")
   end
 
   test :extensions do
