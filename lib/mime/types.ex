@@ -7,7 +7,7 @@ defmodule MIME.Types do
 
   stream = File.stream! Path.expand("../../priv/mime.types", __DIR__)
   mapping = Enum.reverse Enum.reduce(stream, [], fn (line, acc) ->
-    if String.match?(line, %r/^[#\n]/) do
+    if String.match?(line, ~r/^[#\n]/) do
       acc
     else
       [ type | exts ] = String.split(String.strip(line))
