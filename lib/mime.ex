@@ -1,5 +1,5 @@
 defmodule MIME do
   def version do
-    unquote(Mix.project[:version])
+    unquote(Mix.Project.config[:version])
   end
 end
