@@ -6,11 +6,11 @@ versa.
 ## Usage
 
 ```iex
-iex> Mime.Types.type("json")
+iex> MIME.Types.type("json")
 "application/json"
-iex> Mime.Types.extensions("application/json")
+iex> MIME.Types.extensions("application/json")
 ["json"]
-iex> Mime.Types.path("fixtures/users.json")
+iex> MIME.Types.path("fixtures/users.json")
 "application/json"
 ```
 
