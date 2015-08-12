@@ -6,6 +6,6 @@ defmodule MIME.Mixfile do
   def project do
     [ app: :mime,
       version: @version,
-      elixir: "~> 0.13.0 or ~> 0.14.0-dev" ]
+      elixir: "~> 1.0" ]
   end
 end
